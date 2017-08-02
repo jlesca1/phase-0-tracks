@@ -1,0 +1,27 @@
+.octopus_outfit {
+  position: relative;
+}
+
+#hat {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -120px;
+}
+
+#octopus {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -100px;
+}
+
+#glasses {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: 40px;
+  margin-left: -55px;
+}
