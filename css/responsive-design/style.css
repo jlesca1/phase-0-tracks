@@ -8,15 +8,16 @@ cite {
   display: block;
   margin-top: 10px;
 }
-body {
-	width: 100%;
-}
-#body {
-	position: absolute;
-	left: 200px;
-}
+/*body {
+	width: 80%;
+  margin: 0 auto;
+}*/
+/*#body {
+	position: fixed;
+	left: 100%;
+}*/
 .sidebar {
-	width: 200px;
+	width: 30%;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -24,16 +25,17 @@ body {
 }
 
 #container {
-	position: absolute;
+	position: fixed;
 	top: 0;
-	left: 200px;
+	left: 300px;
 	right: 0;
 	bottom: 0;
-	width: 756px;
-
+	width: 60%;
+  overflow-y:scroll;
+  overflow-x:hidden;
 }
 /* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
+image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 img {
   width: 100%;
