@@ -8,12 +8,30 @@ cite {
   display: block;
   margin-top: 10px;
 }
-
-#external-links ul {
-  list-style-type: none;
-  padding-left: 0px;
+body {
+	width: 100%;
+}
+#body {
+	position: absolute;
+	left: 200px;
+}
+.sidebar {
+	width: 200px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
 }
 
+#container {
+	position: absolute;
+	top: 0;
+	left: 200px;
+	right: 0;
+	bottom: 0;
+	width: 756px;
+
+}
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
