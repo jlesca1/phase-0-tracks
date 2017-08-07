@@ -8,10 +8,6 @@ cite {
   display: block;
   margin-top: 10px;
 }
-/*body {
-	width: 80%;
-  margin: 0 auto;
-}*/
 /*#body {
 	position: fixed;
 	left: 100%;
@@ -50,3 +46,18 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    font-size:20px;
+  }
+  h1{
+    font-size:20px;
+  }
+}
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
