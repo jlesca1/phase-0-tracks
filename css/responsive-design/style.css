@@ -29,6 +29,7 @@ cite {
 	width: 60%;
   overflow-y:scroll;
   overflow-x:hidden;
+  margin: auto;
 }
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like,
@@ -47,12 +48,30 @@ figcaption {
   text-align: right;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) {
   .sidebar {
     font-size:20px;
   }
   h1{
     font-size:20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    font-size:17px;
+  }
+  h1{
+    font-size:17px;
+  }
+  img {
+  width: 50%;
+  }
+  p{
+    width: 50%;
+  }
+  blockquote{
+    width: 5s0%;
   }
 }
 
