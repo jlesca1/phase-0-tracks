@@ -1,4 +1,4 @@
-print "How many employees are there to inut? "
+print "How many employees are there to input? "
 employee_count = gets.chomp.to_i
 count = 1
 
@@ -45,13 +45,17 @@ while (count <= employee_count)
     puts "Results inconclusive."
   end
 
-  while (allergy != sunshine) || (allergy != done)
+  allergy = ""
+  while (allergy != "sunshine") && (allergy != "done")
       puts "Please enter any alergies or 'done' when complete"
-      if allergy==sunshine
-        puts "robably a vampire."
+      allergy = gets.chomp
+      if allergy=="sunshine"
+        puts "Probably a vampire."
       end
   end
 
   count = count + 1
 
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
