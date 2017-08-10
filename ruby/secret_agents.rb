@@ -1,8 +1,15 @@
+# Method declarations
+
+# Pseudocode for encrypt_method
+
 # take in a string as input
 # id the length of the word
 # take the each letter in the work and turn it into the following letter in alphabet
 # print result
 # ex. hello => ifmmp
+
+
+# Encryption_method code
 
 def encrypt_method (test_string)
   index=0
@@ -18,13 +25,17 @@ def encrypt_method (test_string)
   return test_string
 end
 
-#encrypt_method ("hello")
+
+# Pseudocode for decryption_method
 
 # take in encripted string as input
 # id the length of the word
 # take each letter and turn it into the preceeding letter of the alphabet
 # print the new letter
 # ifmmp => hello
+
+
+# Decryption_method code
 
 def decrypt_method (test_string2)
   index=0
@@ -39,17 +50,27 @@ def decrypt_method (test_string2)
   return test_string2
 end
 
-# sdecrypt_method ("ifmmp")
+# Testing method calls
+
+# decrypt_method ("ifmmp")
 # encrypt_method("abc")
 # encrypt_method("zed")
 # decrypt_method("bcd")
 # decrypt_method("afe")
+
 # decrypt_method(encrypt_method("swordfish"))
+  # This method call works because the method encrypt_method returns a value.  This value isthen use for the decryption to use as an input.  The over all result is we end with what original 'swordfish'"
+
+
+# Pseudocode for driver code
 
 # Asks a secret agent (the user) whether they would like to decrypt or encrypt a password
 # Asks them for the password
 # Conducts the requested operation
 # prints the result to the screen
+
+
+# Driver Code
 
 valid_input = false
 
