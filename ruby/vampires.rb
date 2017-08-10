@@ -28,8 +28,12 @@ end
 current_year = 2017
 age_test = current_year-year_born
 
-if (age_test == age) && (garlic_bread == true || health_insurance == true)
+if(name==Drake Cula)||(name==Tu Fang)
+  puts "Definitely a vampire."
+elseif (age_test == age) && (garlic_bread == true || health_insurance == true)
   puts "Probably not a vampire."
+elsif (age_test != age) && (garlic_bread == false && health_insurance == false)
+  puts "Almost certainly a vampire."
 elsif (age_test != age) && (garlic_bread == false || health_insurance == false)
   puts "Probably a vampire."
 else
