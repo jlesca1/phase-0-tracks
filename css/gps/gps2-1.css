@@ -1,0 +1,16 @@
+.column-1 {
+  font-family: "Times New Roman";
+  color: white;
+  float:left;
+  width:50%;
+  background:#9c9;
+}
+.column-2 {
+  font-family: "Arial";
+  color: yellow;
+  float:right;
+  width:50%;
+  background:#c9c;
+}
+
+footer {clear: both;}
