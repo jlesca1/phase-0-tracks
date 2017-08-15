@@ -40,3 +40,12 @@ client_info = {
 }
 
 p client_info
+
+print "Are there any change you would like to make to the above list? (type catigory name to change or none to keep current list): "
+update=gets.chomp
+
+if udate != "none"{
+
+}
+
+p client_info
