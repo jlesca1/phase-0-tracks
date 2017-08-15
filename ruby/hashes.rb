@@ -44,8 +44,9 @@ p client_info
 print "Are there any change you would like to make to the above list? (type catigory name to change or none to keep current list): "
 update=gets.chomp
 
-if udate != "none"{
-
-}
+if update != "none"
+  print "Please input correct #{update}: "
+  client_info[update] = gets.chomp.intern
+end
 
 p client_info
