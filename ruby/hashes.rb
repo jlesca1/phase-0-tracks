@@ -16,10 +16,10 @@ print "Please enter your name: "
 name = gets.chomp
 
 print "Please enter your age: "
-age = gets.chomp
+age = gets.chomp.to_i
 
 print "Please enter your numer of children: "
-num_children = gets.chomp
+num_children = gets.chomp.to_i
 
 print "Please enter your decor theme: "
 decor_theme = gets.chomp
@@ -42,11 +42,11 @@ client_info = {
 p client_info
 
 print "Are there any change you would like to make to the above list? (type catigory name to change or none to keep current list): "
-update=gets.chomp
+update=gets.chomp.intern
 
 if update != "none"
   print "Please input correct #{update}: "
-  client_info[update] = gets.chomp.intern
+  client_info[update] = gets.chomp
 end
 
 p client_info
