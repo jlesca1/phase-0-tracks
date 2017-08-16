@@ -50,3 +50,8 @@ if update != "none"
 end
 
 p client_info
+
+# The below is to make sure  meet the requirement of the assignment
+clients = []
+clients << client_info
+p clients[0]
