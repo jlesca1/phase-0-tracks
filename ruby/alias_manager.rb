@@ -8,15 +8,13 @@
 
 # Main Code
 
-print "Please enter your first and last name: "
-name = gets.chomp.downcase
+# print "Please enter your first and last name: "
+# name = gets.chomp.downcase
 
 original_name_array = []
-
-
 original_name_array.push(name)
 
-#def alias(name)
+def alias(name)
   name_array = name.split(" ")
   first_name = name_array.shift
   name_array.push(first_name)
@@ -47,7 +45,7 @@ original_name_array.push(name)
     elsif consonant_array.include?(letter)
       index = consonant_array.index(letter)
 
-      if index < vowel_array.length-1
+      if index < consonant_array.length-1
         next_index = index + 1
         new_letter = consonant_array[next_index]
         final_name_array.push(new_letter)
@@ -58,12 +56,12 @@ original_name_array.push(name)
     else
      final_name_array.push(" ")
     end
-  #final_name = final_name_array.join("")
+  p final_name = final_name_array.join("")
   end
   p final_name_array.join("")
-#end
+end
 
-# print "Please enter your first and last name: "
-# alias_name = gets.chomp.downcase
+ print "Please enter your first and last name: "
+ name = gets.chomp.downcase
 
-#alias(input)
+alias(name)
