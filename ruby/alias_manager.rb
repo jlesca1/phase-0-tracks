@@ -11,7 +11,12 @@
 print "Please enter your first and last name: "
 name = gets.chomp.downcase
 
-def alias(name)
+original_name_array = []
+
+
+original_name_array.push(name)
+
+#def alias(name)
   name_array = name.split(" ")
   first_name = name_array.shift
   name_array.push(first_name)
@@ -51,8 +56,14 @@ def alias(name)
         final_name_array.push(new_letter)
       end
     else
-      final_name_array.push(" ")
+     final_name_array.push(" ")
     end
-    p final_name = final_name_array.join("")
+  #final_name = final_name_array.join("")
   end
-end
+  p final_name_array.join("")
+#end
+
+# print "Please enter your first and last name: "
+# alias_name = gets.chomp.downcase
+
+#alias(input)
