@@ -1,4 +1,4 @@
-# Pseaudocode###########################################
+# Pseaudocode ###########################################
 #
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
@@ -28,7 +28,7 @@
 # steps: Print each item and quantity per line with a colon between the two
 # output: Hash
 
-#Main###################################################
+# Main ##################################################
 
 def create_list(items)
   grocery_list = {} #other method is only local in grocery_list
@@ -38,11 +38,28 @@ def create_list(items)
     grocery_hash[food_array[i]] = 1
     i+=1
   end
+  print_list(grocery_hash)
   return grocery_hash
 end
 
-touch part 2nd method add items
-add_item #pass in grocery_list
+grocery_list = create_list # equvalat to the return value from create_list return; to make create_list not local
 
-grocery_list = create_list # equlalat to the return value from line41; to make creae_list less local
-add_item(grocery_list, bananas, 1)
+def add_item(grocery_list, key, item) #same as 52-55?
+  grocery_list[key] = item
+  return grocery_list
+end
+
+def add_item(array, key, item) #same as 47-50?
+  array[key] = item
+  return array
+end
+
+
+
+grocery_list = add_item # Does this make sence and is the logic linear like that? Willthis update the global variable? (grocery_list)
+
+# Driver Code ##########################################
+
+# Doin` the stuff
+
+add_item(grocery_list, cantalope, 2) #line 47-50 or 52-55
