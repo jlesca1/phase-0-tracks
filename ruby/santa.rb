@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
@@ -20,16 +22,17 @@ class Santa
     puts "This santa has a gender of #{@gender}"
   end
 
-  def ethnicity()
+  def santa_ethnicity()
     puts "This santa has an ethnicity of #{@ethnicity}"
   end
 
-  def age(age)
-    @age = age
+  def santa_age()
+    puts "Santa is #{@age} years old"
   end
 
-  def celebrate_birthday
-    @age = age+1
+  def celebrate_birthday()
+    @age = @age+1
+    puts "Santa is now #{@age} years old"
   end
 
   def get_mad_at(reindeer)
@@ -46,7 +49,6 @@ class Santa
     @reindeer_ranking.push(reindeer)
     p @reindeer_ranking
   end
-
 end
 
 santas = []
@@ -65,14 +67,20 @@ puts ""
 santas[0].speak
 santas[0].eat_milk_and_cookies("chololate-chip")
 santas[0].gender
-santas[0].ethnicity
-# puts ""
-# santas[1].speak
-# santas[1].eat_milk_and_cookies("snickerdoodle")
-# santas[1].gender
-# santas[1].ethnicity
+santas[0].santa_ethnicity
+santas[0].santa_age
+santas[0].celebrate_birthday
+puts ""
+santas[1].speak
+santas[1].eat_milk_and_cookies("snickerdoodle")
+santas[1].gender
+santas[1].santa_ethnicity
+santas[1].santa_age
+santas[1].celebrate_birthday
 # puts ""
 # santas[2].speak
 # santas[2].eat_milk_and_cookies("peanutbutter")
-# santas[2].gender
-# santas[2].ethnicity
+# santas[2].santa_gender
+# santas[2].santa_ethnicity
+# santas[2].age
+# santas[2].celebrate_birthday
