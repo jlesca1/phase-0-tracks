@@ -53,34 +53,36 @@ end
 
 santas = []
 
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_genders = ["agender", "female", "bigender", "male", "genderqueer", "gender fluid", "N/A"]
 
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
+print "Please enter thenumber of Santas that you wish to generate: "
+santa_count=gets.chomp.to_i
+
+santa_count.times do |i|
+  santas << Santa.new(example_genders[rand(example_genders.length)], example_ethnicities[rand(example_ethnicities.length)])
 end
 
- santas[0].get_mad_at("Dasher")
-
-puts ""
-santas[0].speak
-santas[0].eat_milk_and_cookies("chololate-chip")
-santas[0].gender
-santas[0].santa_ethnicity
-santas[0].santa_age
-santas[0].celebrate_birthday
-puts ""
-santas[1].speak
-santas[1].eat_milk_and_cookies("snickerdoodle")
-santas[1].gender
-santas[1].santa_ethnicity
-santas[1].santa_age
-santas[1].celebrate_birthday
+# santas[0].get_mad_at("Dasher")
 # puts ""
-# santas[2].speak
-# santas[2].eat_milk_and_cookies("peanutbutter")
-# santas[2].santa_gender
-# santas[2].santa_ethnicity
-# santas[2].age
-# santas[2].celebrate_birthday
+
+count=0
+while count < santa_count
+  puts "count : #{count}"
+  santas[count].speak
+  count+=1
+end
+
+# santas[0].eat_milk_and_cookies("chololate-chip")
+# santas[0].gender
+# santas[0].santa_ethnicity
+# santas[0].santa_age
+# santas[0].celebrate_birthday
+# puts ""
+# santas[1].speak
+# santas[1].eat_milk_and_cookies("snickerdoodle")
+# santas[1].gender
+# santas[1].santa_ethnicity
+# santas[1].santa_age
+# santas[1].celebrate_birthday
