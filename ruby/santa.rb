@@ -6,7 +6,7 @@ class Santa
     puts "Initializing Santa instance ..."
     @gender = gender
     @ethnicity = ethnicity
-    @age = 0
+    @age = rand(0..140)
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   end
 
@@ -57,32 +57,25 @@ example_genders = ["agender", "female", "bigender", "male", "genderqueer", "gend
 
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-print "Please enter thenumber of Santas that you wish to generate: "
+print "Please enter the number of Santas that you wish to generate: "
 santa_count=gets.chomp.to_i
 
 santa_count.times do |i|
   santas << Santa.new(example_genders[rand(example_genders.length)], example_ethnicities[rand(example_ethnicities.length)])
 end
 
-# santas[0].get_mad_at("Dasher")
 # puts ""
 
 count=0
 while count < santa_count
   puts "count : #{count}"
   santas[count].speak
+  santas[count].gender
+  santas[count].santa_ethnicity
+  santas[count].santa_age
+  santas[count].celebrate_birthday
+  santas[count].eat_milk_and_cookies("chololate-chip")
   count+=1
 end
 
-# santas[0].eat_milk_and_cookies("chololate-chip")
-# santas[0].gender
-# santas[0].santa_ethnicity
-# santas[0].santa_age
-# santas[0].celebrate_birthday
-# puts ""
-# santas[1].speak
-# santas[1].eat_milk_and_cookies("snickerdoodle")
-# santas[1].gender
-# santas[1].santa_ethnicity
-# santas[1].santa_age
-# santas[1].celebrate_birthday
+santas[0].get_mad_at("Dasher")
