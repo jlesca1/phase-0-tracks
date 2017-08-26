@@ -1,4 +1,4 @@
-class Santa
+  class Santa
   attr_reader :age, :ethnicity
   attr_accessor :gender
 
