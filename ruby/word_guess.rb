@@ -26,31 +26,53 @@ class Number_guessing
     @guess_count
     @letter_guess
     @word
+    @letter_guess_index_array=[]
   end
 
-  def guess(word_array, letter_guess)
-    if word_array.include?(letter_guess)
-      print "Good job! The word contains #{letter_guess}"
-      # print the word with letters guessed so far
+  def guess(word_array, result_array, letter_guess)
+
+    if result_array.include?(letter_guess)
+      puts "You have already choosen #{letter_guess}, please choose a different number"
+    # elsif !result_array.include?("-")
+    #   puts "Contrats!"
+    elsif word_array.include?(letter_guess)
+      puts "Good job! The word contains #{letter_guess}"
+
+      @letter_guess_index_array = word_array.each_index.select { |i| word_array[i]==letter_guess }
+
+      count=0
+
+      while count < @letter_guess_index_array.length
+        result_array[@letter_guess_index_array[count]] = letter_guess
+        count+=1
+        p result_array
+      end
     else
       puts "Sorry, the word does not contain the letter #{letter_guess}"
     end
   end
-
 end
-
 
 # Driver Code ###########################################
 
 print "Input a word for the other player to guess: "
-p word = gets.chomp
-p word_array = word.split(%r{\s*})
+word = gets.chomp
+word_array = word.split(%r{\s*})
 result_array = word.split(%r{\s*})
 p result_array.fill("-")
 
-print "Guess a letter: "
-p letter_guess = gets.chomp
-
 number_guessing = Number_guessing.new()
 
-number_guessing.guess(word_array, letter_guess)
+x=0
+while x < 10 && result_array.include?("-")
+  print "Guess a letter: "
+  letter_guess = gets.chomp
+  number_guessing.guess(word_array, result_array,letter_guess)
+  x+=1
+end
+
+if result_array.include?("-")
+  puts "Sorry, but the wor you are looking for is #{word}"
+else
+  puts "Congrats! You correctly guessed the word #{word}!"
+end
