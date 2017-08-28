@@ -14,65 +14,66 @@
 
 # Main Code #############################################
 
-word_array=[]
-result_array=[]
-
-class Number_guessing
+class NumberGuessing
   attr_reader :letter_guess
   attr_accessor :word_array, :word
 
-  def initialize
+  def initialize(word)
     @correct_guess = false
-    @guess_count
     @letter_guess
-    @word
-    @letter_guess_index_array=[]
+    @word = word
+    @letter_guess_array=[]
+    @word_array = @word.split(%r{\s*})
+    @result_array = Array.new(@word.length, "_")
+    # @guess_count = @word.length+5
   end
 
-  def guess(word_array, result_array, letter_guess)
+  def guess(letter_guess)
 
-    if result_array.include?(letter_guess)
+    if @letter_guess_array.include?(letter_guess)
       puts "You have already choosen #{letter_guess}, please choose a different number"
-    # elsif !result_array.include?("-")
-    #   puts "Contrats!"
-    elsif word_array.include?(letter_guess)
+      "You have already choosen #{letter_guess}, please choose a different number"
+    elsif @word_array.include?(letter_guess)
+
+  #   amount_of_flips.times do |i|
+  #     puts
+  #   end
+
+      @word_array.each_index { |i| @result_array[i]==letter_guess }
+      p word_array
+      p result_array
+      # @letter_guess_index_array = @word_array.each_index.select { |i| @word_array[i]==letter_guess }
+      # count=0
+      # while count < @letter_guess_index_array.length
+      #   @result_array[@letter_guess_index_array[count]] = letter_guess
+      #   count+=1
+      # end
       puts "Good job! The word contains #{letter_guess}"
-
-      @letter_guess_index_array = word_array.each_index.select { |i| word_array[i]==letter_guess }
-
-      count=0
-
-      while count < @letter_guess_index_array.length
-        result_array[@letter_guess_index_array[count]] = letter_guess
-        count+=1
-        p result_array
-      end
+      "Good job! The word contains #{letter_guess}"
     else
-      puts "Sorry, the word does not contain the letter #{letter_guess}"
+      puts "Sorry, the word does not contain the letter {letter_guess}"
+      "Sorry, the word does not contain the letter #{letter_guess}"
     end
   end
 end
 
+
 # Driver Code ###########################################
 
 print "Input a word for the other player to guess: "
-word = gets.chomp
-word_array = word.split(%r{\s*})
-result_array = word.split(%r{\s*})
-p result_array.fill("-")
+@word = gets.chomp
 
-number_guessing = Number_guessing.new()
-
+number_guessing = NumberGuessing.new(@word)
 x=0
-while x < 10 && result_array.include?("-")
+while x < 10 && @result_array.include?("_")
   print "Guess a letter: "
-  letter_guess = gets.chomp
-  number_guessing.guess(word_array, result_array,letter_guess)
+  number_guessing.guess(gets.chomp)
+  @letter_guess_array = gets.chomp
   x+=1
 end
 
-if result_array.include?("-")
-  puts "Sorry, but the wor you are looking for is #{word}"
+if @result_array.include?("_")
+  puts "Sorry, but the word you are looking for is #{@word}"
 else
-  puts "Congrats! You correctly guessed the word #{word}!"
+  puts "Congrats! You correctly guessed the word #{@word}!"
 end
