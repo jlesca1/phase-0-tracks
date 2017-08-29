@@ -45,8 +45,8 @@ class NumberGuessing
       puts "Good job! The word contains #{letter_guess}"
       "Good job! The word contains #{letter_guess}"
     else
-      #puts "Sorry, the word does not contain the letter {letter_guess}"
       puts "Sorry, the word does not contain the letter #{letter_guess}"
+      "Sorry, the word does not contain the letter #{letter_guess}"
     end
   end
 end
@@ -68,7 +68,9 @@ end
 p "can u c me?"
 p number_guessing.result_array
 if number_guessing.result_array.include?("_")
-   puts "Sorry, but the word you are looking for is #{number_guessing.word}"
+  puts "Sorry, but the word you are looking for is #{number_guessing.word}"
+  "Sorry, but the word you are looking for is #{number_guessing.word}"
 else
-  puts "Congrats! You correctly guessed the word #{number_guessing.word}!"
+  p "Congrats! You correctly guessed the word #{number_guessing.word}!"
+  "Congrats! You correctly guessed the word #{number_guessing.word}!"
 end
