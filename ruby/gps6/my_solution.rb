@@ -66,7 +66,6 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-
 #loop
 #name and make an instance of VirusPredictor
 #input: name, pop density(nested), population (nested)
@@ -77,25 +76,32 @@ STATE_DATA.each do |state, data|
   state_virus_predictor.virus_effects
 end
 
-# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-# alabama.virus_effects
-
-# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-# jersey.virus_effects
-
-# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-# california.virus_effects
-
-# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-# alaska.virus_effects
-
-# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-# alabama.virus_effects
-# alabama.speed_of_spread
-
 #=======================================================================
-# Reflection Section
-#
-#
-#
-#
+=begin
+Reflection Section
+
+What are the differences between the two different hash syntaxes shown in the state_data file?
+
+One syntax is key => date while the other is key: data.  THis issimply two ways to perform the same task.
+
+
+What does require_relative do? How is it different from require?
+
+Require_relative connects this page with the 'state_data' page and share data between the two pages. Require does the same thing but uses a different path.
+
+
+What are some ways to iterate through a hash?
+
+You can use .each in a do loop, though a while loopcan be used as well.
+
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+All the variabes were instance variable and as such dod not need to be brout into the method as they are already visible.
+
+
+What concept did you most solidify in this challenge?
+
+I gained a stronger inderstanding of instance varibales andam understanding the .each and hash tables a bit better.
+
+=end
