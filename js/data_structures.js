@@ -1,3 +1,5 @@
+// Main Code ======================================================
+
 var colors = ['green', 'blue', 'yellow', 'orange'];
 var names = ['Seabiscuit', 'Shadow', 'Jolt', 'Thunderbolt'];
 
@@ -20,6 +22,8 @@ function Car(color, mpg, isLuxury) {
 
   this.rev = function() {console.log("vurrmmm, vuurrrmm");};
 }
+
+// Driver code ====================================================
 
 var newCar = new Car("Orange", 25, true);
 console.log(newCar);
