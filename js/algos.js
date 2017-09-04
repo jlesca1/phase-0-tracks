@@ -57,19 +57,11 @@ function keyValueMatch(object1, object2) {
 
   for (var i=0; i<$key1.length; i++) {
     for (var j=0; j<$key2.length; j++) {
-      //console.log($key1[i]);
-      //console.log($key2[j]);
       if ($key1[i]==$key2[j]) {
-        //console.log("Keys match! " + $key1[i] + " " + $key2[j]);
         if ($value1[i]==$value2[j]) {
-          //console.log("Values match! " + $value1[i] + " " + $value2[j]);
           console.log("We have a key-value match!")
           return true;
-        }else{
-          //console.log("Values do NOT match so there are no key-value matches " + $value1[i] + " " + $value2[j]);
         }
-      }else{
-        //console.log("Keys do NOT match so there are no key-value matches "  + $key1[i] + " " + $key2[j]);
       }
     }
   }
