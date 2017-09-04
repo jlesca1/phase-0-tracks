@@ -26,7 +26,27 @@ function longestWord(input_array) {
       result = input_array[i]
     }
   }
-  console.log(result);
+  console.log("The list of words are: " + input_array);
+  console.log("The longest word is: " + result);
+}
+
+//============================================================
+// This function (randomWords) returns an array of random words between the length of 1 and 10.  The parmater osf the method is the total number of works in the array.
+
+function randomWords(num_of_words) {
+  word_array=[];
+  var word = "";
+  var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  for(var n = 0; n < num_of_words; n++) {
+    var word_length = Math.floor(Math.random() * 10 + 1);
+    for(var i = 0; i < word_length; i++) {
+      word += alphabet.charAt(Math.floor(Math.random()*alphabet.length));
+    }
+    word_array.push(word);
+    word="";
+  }
+  return word_array
 }
 
 //============================================================
@@ -73,14 +93,11 @@ function keyValueMatch(object1, object2) {
 // Driver Code
 // longestWord
 
-var input_array1 = ["long phrase","longest phrase","longer phrase"];
-longestWord(input_array1);
+// var input_array1 = ["long phrase","longest phrase","longer phrase"];
+// longestWord(input_array1);
 
-var input_array2 = ["turtle","cow","lemur","owl"];
-longestWord(input_array2);
+longestWord(randomWords(4));
 
-var input_array3 = ["blue","green","orange","red","tan","stone"];
-longestWord(input_array3);
 console.log (" ");
 
 //============================================================
