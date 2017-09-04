@@ -45,11 +45,35 @@ If they do not return false
 // keyValueMatchs
 
 function keyValueMatch(object1, object2) {
-console.log("length1 " + object1.length)
-console.log("test1 " + object1.age);
-console.log("test2 " + object1.name);
-console.log("test3 " + object2.age);
-console.log("test4 " + object2.name);
+  $key1 = Object.keys(object1);
+  //console.log($key1);
+  $key2 = Object.keys(object2);
+  //console.log($key2);
+
+  $value1 = Object.values(object1);
+  //console.log($value1);
+  $value2 = Object.values(object2);
+  //console.log($value2);
+
+  for (var i=0; i<$key1.length; i++) {
+    for (var j=0; j<$key2.length; j++) {
+      //console.log($key1[i]);
+      //console.log($key2[j]);
+      if ($key1[i]==$key2[j]) {
+        //console.log("Keys match! " + $key1[i] + " " + $key2[j]);
+        if ($value1[i]==$value2[j]) {
+          //console.log("Values match! " + $value1[i] + " " + $value2[j]);
+          console.log("We have a key-value match!")
+          return true;
+        }else{
+          //console.log("Values do NOT match so there are no key-value matches " + $value1[i] + " " + $value2[j]);
+        }
+      }else{
+        //console.log("Keys do NOT match so there are no key-value matches "  + $key1[i] + " " + $key2[j]);
+      }
+    }
+  }
+  return false;
 }
 
 //============================================================
@@ -58,32 +82,20 @@ console.log("test4 " + object2.name);
 // longestWord
 
 var input_array1 = ["long phrase","longest phrase","longer phrase"];
-
 longestWord(input_array1);
 
 var input_array2 = ["turtle","cow","lemur","owl"];
-
 longestWord(input_array2);
 
 var input_array3 = ["blue","green","orange","red","tan","stone"];
-
 longestWord(input_array3);
+console.log (" ");
 
 //============================================================
 
 // Driver Code
 // keyValueMatchs
-var object1 = {name: "Steven", age: 54}
-var object2 = {name: "Tamir", age: 54}
-function yourFunction(object1, object2) {
+var match
 
-console.log("test1 " + object1.age);
-console.log("test2 " + object1.name);
-console.log("test3 " + object2.age);
-console.log("test4 " + object2.name);
-}
-// for (prop in yourFunction) {
-//   console.log(`yourFunction.${prop} = ${yourFunction[prop]}`);
-// }
-//keyValueMatch(yourFunction);
-keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+match = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+console.log(match);
