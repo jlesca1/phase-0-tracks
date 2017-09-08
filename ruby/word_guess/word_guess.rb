@@ -52,19 +52,19 @@ end
 
 # Driver Code ======================================
 
-# print "Choose a word to use in this game: "
-# #word = gets.chomp
+print "Choose a word to use in this game: "
+word = gets.chomp
 
-# #word_game = Word_game.new(word)
+word_game = Word_game.new(word)
 
-# #while word_game.guesses_left > 0 && word_game.results_array.include?("_")
-#   print "Guess a letter, you have #{word_game.guesses_left} guesses: "
-# #  letter_guess = gets.chomp
-#   word_game.letter_check(letter_guess)
-# #end
+while word_game.guesses_left > 0 && word_game.results_array.include?("_")
+  print "Guess a letter, you have #{word_game.guesses_left} guesses: "
+  letter_guess = gets.chomp
+  word_game.letter_check(letter_guess)
+end
 
-# if word_game.results_array.include?("_")
-#   puts "Sorry, but the word you are looking for is '#{word}'"
-# else
-#   p "Congrats! You correctly guessed the word '#{word}!'"
-# end
+if word_game.results_array.include?("_")
+  puts "Sorry, but the word you are looking for is '#{word}'"
+else
+  p "Congrats! You correctly guessed the word '#{word}!'"
+end
