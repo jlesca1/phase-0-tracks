@@ -28,24 +28,26 @@ class Word_game
   def letter_check(letter_guess)
     if @letter_guess_array.include?(letter_guess)
       puts "You have alreay guessed the letter '#{letter_guess}', please choose a different letter."
+      "You have alreay guessed the letter '#{letter_guess}', please choose a different letter."
     elsif @word_array.include?(letter_guess)
       count=0
       while count < @word_array.length
          if @word_array[count]== letter_guess
           @results_array[count] = letter_guess
+          "Great!  The word contains the letter '#{letter_guess}'"
          end
         count+=1
       end
       puts "Great!  The word contains the letter '#{letter_guess}'"
       @guesses_left-=1
+      "Great!  The word contains the letter '#{letter_guess}'"
     else
       puts "Sorry,the word you are looking for does not contain a the letter '#{letter_guess}'"
       @guesses_left-=1
+      "Sorry,the word you are looking for does not contain a the letter '#{letter_guess}'"
     end
     @letter_guess_array.push(letter_guess)
-    p @results_array
   end
-
 end
 
 # Driver Code ======================================
