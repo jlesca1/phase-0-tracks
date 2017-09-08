@@ -21,29 +21,48 @@ class Word_game
     @word_array = @word.split(%r{\s*})
     @results_array = Array.new(@word.length, "_")
     @letter_guess
-    @letter_guess_array
+    @letter_guess_array=[]
     @guesses_left=10
   end
 
-  def letter_check
-    if letter_guess.include? @letter_guess
-      puts "You have alreay guessed #{@letter_guess}, plese choose a different letter."
-    elsif @word_array.include? @letter_guess
-      puts "Great!  The word contains #{@letter_guess}"
+  def letter_check(letter_guess)
+    if @letter_guess_array.include?(letter_guess)
+      puts "You have alreay guessed the letter '#{letter_guess}', please choose a different letter."
+    elsif @word_array.include?(letter_guess)
+      count=0
+      while count < @word_array.length
+         if @word_array[count]== letter_guess
+          @results_array[count] = letter_guess
+         end
+        count+=1
+      end
+      puts "Great!  The word contains the letter '#{letter_guess}'"
+      @guesses_left-=1
     else
-      puts "Sorry,the word you are looking for does not contain a #{@letter_guess}"
+      puts "Sorry,the word you are looking for does not contain a the letter '#{letter_guess}'"
+      @guesses_left-=1
     end
+    @letter_guess_array.push(letter_guess)
+    p @results_array
   end
 
 end
 
 # Driver Code ======================================
 
-print "Choose a word to use in this game"
+print "Choose a word to use in this game: "
 word = gets.chomp
 
-word_game = Word_game(word).new
+word_game = Word_game.new(word)
 
-print "Guess a letter, you have #{Word_game.guesses_left} gusses."
-letter_guess = gets.chomp
-word_game.letter_check
+while word_game.guesses_left > 0 && word_game.results_array.include?("_")
+  print "Guess a letter, you have #{word_game.guesses_left} guesses: "
+  letter_guess = gets.chomp
+  word_game.letter_check(letter_guess)
+end
+
+if word_game.results_array.include?("_")
+  puts "Sorry, but the word you are looking for is '#{word}'"
+else
+  p "Congrats! You correctly guessed the word '#{word}!'"
+end
