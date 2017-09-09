@@ -1,0 +1,39 @@
+#1
+select * from dates;
+1|02/21/1975
+2|03/07/1974
+3|11/31/1973
+
+#2
+sqlite> update dates set date="12/31/1973" where date="11/31/1973";
+sqlite> select * from dates;
+1|02/21/1975
+2|03/07/1974
+3|12/31/1973
+
+#3
+sqlite> select * from friends join dates on friends.dates_id = dates.id;
+Joseph Lesca|1|1|02/21/1975
+Bill Gardner|2|2|03/07/1974
+Tom Foolery|3|3|12/31/1973
+Eoj Acsel|1|1|02/21/1975
+
+
+#4
+sqlite> select friends.names, dates.date from friends join dates on friends.dates_id = dates.id;
+Joseph Lesca|02/21/1975
+Bill Gardner|03/07/1974
+Tom Foolery|12/31/1973
+Eoj Acsel|02/21/1975
+
+#5
+sqlite> select * from friends;
+Joseph Lesca|1
+Bill Gardner|2
+Tom Foolery|3
+Eoj Acsel|1
+sqlite> delete from friends where names = "Bill Gardner";
+sqlite> select * from friends;
+Joseph Lesca|1
+Tom Foolery|3
+Eoj Acsel|1
