@@ -21,7 +21,7 @@ create_table_cmd = <<-SQL
   )
 SQL
 
-# create the directory table
+# create the directory table the first time file is run.
 phone_db.execute(create_table_cmd)
 
 # Adds new entry into the directory
@@ -94,21 +94,9 @@ elsif selection == 3
     last_name = gets.chomp
     look_up_last_name(phone_db, last_name)
   end
-  # puts " "
-  # print "Look up by phone number: "
-  # phone_number = gets.chomp
-  # puts " "
-  # print "Look up by email address: "
-  # email_address = gets.chomp
 elsif selection == 4
   directory = phone_db.execute("SELECT * FROM directory")
   directory.each do |entry|
     puts "#{entry['first_name']}, #{entry['last_name']}, #{entry['phone_number']}, #{entry['email_address']} "
   end
 end
-
-#explore ORM by retrieving data
-# directory = phone_db.execute("SELECT * FROM directory")
-# directory.each do |entry|
-#   puts "#{entry['first_name']} #{entry['last_name']}'s email is #{entry['email_address']}"
-# end
