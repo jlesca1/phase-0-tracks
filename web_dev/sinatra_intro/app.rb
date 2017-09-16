@@ -44,3 +44,26 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+get '/contact' do
+  "Please mail any requested documents to 1473 Spinning Rodent Ln."
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Great job #{name}!"
+  else
+    "Great job!"
+  end
+end
+
+get '/add/:num_1/:num_2' do
+  sum =  params[:num_1].to_i + params[:num_2].to_i
+  "The sum of #{params[:num_1]} and #{params[:num_2]} is #{sum}"
+end
+
+get '/search_name/:name' do
+  p student = db.execute("SELECT * from students where name=#{params[:name]}")
+  "#{student}?"
+end
